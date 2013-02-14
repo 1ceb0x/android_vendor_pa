@@ -34,6 +34,6 @@ endif
 ifeq (pa_bravo,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_bravo.mk
 endif
-ifeq (pa_bravo,$(TARGET_PRODUCT))
+ifeq (pa_primou,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_primou.mk
 endif
