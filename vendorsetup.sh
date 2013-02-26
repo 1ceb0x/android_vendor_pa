@@ -9,8 +9,6 @@ add_lunch_combo pa_n7100-userdebug
 add_lunch_combo pa_tf700t-userdebug
 add_lunch_combo pa_toro-userdebug
 add_lunch_combo pa_toroplus-userdebug
-<<<<<<< HEAD
 add_lunch_combo pa_primou-userdebug
-=======
 add_lunch_combo pa_crespo-userdebug
->>>>>>> upstream/jellybean
+
