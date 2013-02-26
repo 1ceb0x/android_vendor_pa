@@ -34,6 +34,11 @@ endif
 ifeq (pa_bravo,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_bravo.mk
 endif
+<<<<<<< HEAD
 ifeq (pa_primou,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_primou.mk
+=======
+ifeq (pa_crespo,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_crespo.mk
+>>>>>>> upstream/jellybean
 endif

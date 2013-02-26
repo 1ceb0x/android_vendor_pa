@@ -13,40 +13,36 @@
 # limitations under the License.
 
 # Check for target product
-ifeq (pa_i9300,$(TARGET_PRODUCT))
+ifeq (pa_crespo,$(TARGET_PRODUCT))
 
 # Define PA bootanimation size
-PARANOID_BOOTANIMATION_NAME := XHDPI
+PARANOID_BOOTANIMATION_NAME := HDPI
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_i9300
+OVERLAY_TARGET := pa_hdpi
 
 # Build paprefs from sources
-PREFS_FROM_SOURCE ?= true
+PREFS_FROM_SOURCE := false
 
 # Include ParanoidAndroid common configuration
 include vendor/pa/config/pa_common.mk
 
 # Inherit AOSP device configuration
-$(call inherit-product, device/samsung/i9300/full_i9300.mk)
+$(call inherit-product, device/samsung/crespo/full_crespo.mk)
 
 # Product Package Extras - Repos can be added manually or via addprojects.py
--include vendor/pa/packages/i9300.mk
-
-# CM Package Extras
 -include vendor/pa/packages/cm.mk
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_i9300
-PRODUCT_BRAND := samsung
-PRODUCT_MODEL := GT-I9300
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m0xx TARGET_DEVICE=m0 BUILD_FINGERPRINT="samsung/m0xx/m0:4.1.1/JRO03C/I9300XXDLIB:user/release-keys" PRIVATE_BUILD_DESC="m0xx-user 4.1.1 JRO03C I9300XXDLIB release-keys"
+PRODUCT_NAME := pa_crespo
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Nexus S
+PRODUCT_MANUFACTURER := Samsung
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=soju BUILD_FINGERPRINT="google/soju/crespo:4.1.2/JZO54K/485486:user/release-keys" PRIVATE_BUILD_DESC="soju-user 4.1.2 JZO54K 485486 release-keys"
 
 # Update local_manifest.xml
 GET_VENDOR_PROPS := $(shell vendor/pa/tools/getvendorprops.py $(PRODUCT_NAME))
-GET_PROJECT_RMS := $(shell vendor/pa/tools/removeprojects.py $(PRODUCT_NAME))
-GET_PROJECT_ADDS := $(shell vendor/pa/tools/addprojects.py $(PRODUCT_NAME))
 GET_CM_PROJECT_ADDS := $(shell vendor/pa/tools/addprojects.py cm.adds)
 
 endif
+
